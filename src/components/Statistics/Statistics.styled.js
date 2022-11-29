@@ -30,6 +30,7 @@ export const Stats = styled.ul`
         flex-direction: column;
         font-size: 14px;
         text-align: center;
+        justify-content: center;
         background-color: #000000c7;
 
         span:last-of-type {
