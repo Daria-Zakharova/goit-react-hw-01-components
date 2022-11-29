@@ -15,7 +15,6 @@ export const Friends = styled.ul`
 
 export const FriendCard = styled.li`
     padding: 16px;
-    width: 100%;
     display: flex;
     gap: 16px;
     align-items: center;
