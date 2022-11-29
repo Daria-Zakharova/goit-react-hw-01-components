@@ -2,8 +2,8 @@ import { Section, SectionTitle} from "../Statistics/Statistics.styled";
 import {Table, Transaction} from "./Transactions.styled";
 import PropTypes from 'prop-types';
 
-function TransactionsHistory({data}) {
-    return <Section color = "#efefef">
+export const TransactionsHistory = ({data}) => {
+    return <Section>
         <SectionTitle>History of transactions</SectionTitle>
         <Table>
             <thead>
@@ -35,5 +35,3 @@ TransactionsHistory.propTypes = {
         }
     )),
 };
-
-export default TransactionsHistory;

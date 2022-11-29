@@ -2,9 +2,9 @@ import {Section, SectionTitle} from '../Statistics/Statistics.styled';
 import { Friends, FriendCard } from './FriendsList.styled';
 import PropTypes from 'prop-types';
 
-function FriendList({friends}) {
+export const FriendList = ({friends}) => {
     return (
-        <Section color = "#efefef">
+        <Section>
             <SectionTitle>Friends</SectionTitle>
             <Friends>
                 {friends.map(({avatar, name, isOnline, id}) =>
@@ -28,5 +28,3 @@ FriendList.propTypes = {
         } 
     )),
 };
-
-export default  FriendList;

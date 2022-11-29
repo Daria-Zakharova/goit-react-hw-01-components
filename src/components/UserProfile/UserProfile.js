@@ -2,9 +2,9 @@ import { ProfileCard, Info, Stats } from "./UserProfile.styled";
 import {Section, SectionTitle} from '../Statistics/Statistics.styled';
 import PropTypes from 'prop-types'; 
 
-function UserProfile({username, tag, location, avatar, stats}){
+export const UserProfile = ({username, tag, location, avatar, stats}) => {
 
-    return (<Section color = "#efefef">
+    return (<Section>
     <SectionTitle>User Profile</SectionTitle>
     <ProfileCard>
         <Info>
@@ -42,5 +42,3 @@ UserProfile.propTypes = {
         likes: PropTypes.number,
     }),
 }
-
-export default  UserProfile;

@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 
 export const Section = styled.section`
     padding: 0 0 80px;
-    background-color: ${({color}) => color};
     `;
 
 export const SectionTitle = styled.h2`

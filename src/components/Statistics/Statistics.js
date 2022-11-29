@@ -2,8 +2,8 @@ import { Section, SectionTitle, Stats} from "./Statistics.styled";
 import PropTypes from 'prop-types';
 
 
-function Statistics({data}) {
-    return <Section color = "#efefef">
+export const Statistics = ({data}) => {
+    return <Section>
         <SectionTitle>Upload Stats</SectionTitle>
         <Stats numberOfItems = {data.length}>
             {data.map(({id, label, percentage}) => 
@@ -23,5 +23,3 @@ Statistics.propTypes = {
         }
     )),
 };
-
-export default Statistics;
