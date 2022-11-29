@@ -13,10 +13,8 @@ export const Info = styled.div`
     text-align: center;
     background-color: #ffffffcc;
 
-    
-
     img {
-        margin-bottom: 30px;
+        margin: 0 auto 30px;
         width: 112px;
         height: 112px;
         border-radius: 50%;
