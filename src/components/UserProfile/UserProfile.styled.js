@@ -20,7 +20,7 @@ export const Info = styled.div`
         border-radius: 50%;
         background-color: #fff;
         box-shadow: rgb(0 0 0 / 20%) 0px 3px 2px -2px, rgb(0 0 0 / 14%) 0px 3px 2px 0px, rgb(0 0 0 / 12%) 0px -1px 2px 0px;
-        transition: transform linear 300ms;
+        transition: transform linear 400ms;
     }
 
     img:hover {
@@ -54,6 +54,8 @@ export const Stats = styled.ul`
         width: calc((100% - 4px)/ 3);
         display: flex;
         flex-direction: column;
+        gap: 8px;
+        justify-content: center;
         text-align: center;
         font-size: 14px;
         font-weight: 500;

@@ -1,30 +1,29 @@
-import {Section, SectionTitle} from '../Statistics/Statistics.styled';
-import { Friends, FriendCard } from './FriendsList.styled';
+import { Friends} from './FriendsList.styled';
+import { FriendCard } from './FriendCard';
 import PropTypes from 'prop-types';
 
 export const FriendList = ({friends}) => {
     return (
-        <Section>
-            <SectionTitle>Friends</SectionTitle>
             <Friends>
                 {friends.map(({avatar, name, isOnline, id}) =>
-                    <FriendCard key = {id} online={isOnline}>
-                        <span></span>
-                        <img src={avatar} alt="User avatar"/>
-                        <p>{name}</p>
-                    </FriendCard>)}
+                    <li key = {id}>
+                        <FriendCard 
+                            online={isOnline}
+                            avatarLink = {avatar}
+                            username = {name} />
+                    </li>)
+                    }
             </Friends>
-        </Section>
-    )
+    );
 }
 
 FriendList.propTypes = {
     friends: PropTypes.arrayOf(
         PropTypes.exact({
-            avatar: PropTypes.string,
-            name: PropTypes.string,
-            isOnline: PropTypes.bool,
-            id: PropTypes.number,
-        } 
-    )),
+            avatar: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired,
+            isOnline: PropTypes.bool.isRequired,
+            id: PropTypes.number.isRequired,
+        })
+    ),
 };

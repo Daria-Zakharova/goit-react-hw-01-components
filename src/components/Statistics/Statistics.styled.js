@@ -1,18 +1,5 @@
 import styled from '@emotion/styled';
 
-export const Section = styled.section`
-    padding: 0 0 80px;
-    `;
-
-export const SectionTitle = styled.h2`
-    margin: 0 auto 80px;
-    padding: 40px;    
-    background-color: #fff;
-    font-size: 20px;
-    text-transform: uppercase;
-    text-align: center;
-    `;
-
 export const Stats = styled.ul`
     margin: 0 auto;
     width: ${({numberOfItems}) => `calc(80px*${numberOfItems})`};
@@ -33,6 +20,7 @@ export const Stats = styled.ul`
         background-color: #000000c7;
 
         span:last-of-type {
+            margin-top: 8px;
             font-size: 18px;
             font-weight: 500;
         }

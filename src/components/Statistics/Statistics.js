@@ -1,25 +1,27 @@
-import { Section, SectionTitle, Stats} from "./Statistics.styled";
+import { Section } from "../Section/Section";
+import {Stats} from "./Statistics.styled";
 import PropTypes from 'prop-types';
 
 
-export const Statistics = ({data}) => {
-    return <Section>
-        <SectionTitle>Upload Stats</SectionTitle>
-        <Stats numberOfItems = {data.length}>
-            {data.map(({id, label, percentage}) => 
+export const Statistics = ({title, stats}) => {
+    return (
+    <Section sectionTitle={title}>
+        <Stats numberOfItems = {stats.length}>
+            {stats.map(({id, label, percentage}) =>
             <li key = {id}>
                 <span>{label}</span>
                 <span>{percentage}</span>
             </li>)}
         </Stats>
-    </Section>;
+    </Section>);
 }
 
 Statistics.propTypes = {
-    data: PropTypes.arrayOf(PropTypes.exact({
-            id: PropTypes.string,
-            label: PropTypes.string,
-            percentage: PropTypes.number,
+    title: PropTypes.string,
+    stats: PropTypes.arrayOf(PropTypes.exact({
+            id: PropTypes.string.isRequired,
+            label: PropTypes.string.isRequired,
+            percentage: PropTypes.number.isRequired,
         }
     )),
 };

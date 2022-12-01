@@ -1,10 +1,8 @@
-import { Section, SectionTitle} from "../Statistics/Statistics.styled";
 import {Table, Transaction} from "./Transactions.styled";
 import PropTypes from 'prop-types';
 
 export const TransactionsHistory = ({data}) => {
-    return <Section>
-        <SectionTitle>History of transactions</SectionTitle>
+    return (
         <Table>
             <thead>
                 <tr>
@@ -22,16 +20,15 @@ export const TransactionsHistory = ({data}) => {
                     </Transaction>
                 )}
             </tbody>
-        </Table>
-    </Section>;
+        </Table>);
 }
 
 TransactionsHistory.propTypes = {
     data: PropTypes.arrayOf(PropTypes.exact({
-            id: PropTypes.string,
-            type: PropTypes.string,
-            amount: PropTypes.string,
-            currency: PropTypes.string,
+            id: PropTypes.string.isRequired,
+            type: PropTypes.string.isRequired,
+            amount: PropTypes.string.isRequired,
+            currency: PropTypes.string.isRequired,
         }
     )),
 };

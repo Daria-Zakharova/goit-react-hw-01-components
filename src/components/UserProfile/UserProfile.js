@@ -1,11 +1,9 @@
 import { ProfileCard, Info, Stats } from "./UserProfile.styled";
-import {Section, SectionTitle} from '../Statistics/Statistics.styled';
 import PropTypes from 'prop-types'; 
 
-export const UserProfile = ({username, tag, location, avatar, stats}) => {
+export const UserProfile = ({username, tag, location, avatar, stats : {followers, views, likes}}) => {
 
-    return (<Section>
-    <SectionTitle>User Profile</SectionTitle>
+    return (
     <ProfileCard>
         <Info>
             <img src={avatar} alt="User avatar"/>
@@ -16,29 +14,28 @@ export const UserProfile = ({username, tag, location, avatar, stats}) => {
         <Stats>
             <li>
                 <span>Followers</span>                
-                <span>{stats.followers}</span>
+                <span>{followers}</span>
                 </li>
             <li>
                 <span>Views</span>                
-                <span>{stats.views}</span>
+                <span>{views}</span>
                 </li>
             <li>
                 <span>Likes</span>                
-                <span>{stats.likes}</span>
+                <span>{likes}</span>
                 </li>
         </Stats>
-    </ProfileCard>
-    </Section>);
+    </ProfileCard>);
 }
 
 UserProfile.propTypes = {
-    username: PropTypes.string,
-    tag: PropTypes.string,
-    location: PropTypes.string,
-    avatar: PropTypes.string,
+    username: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
     stats: PropTypes.exact({
-        followers: PropTypes.number,
-        views: PropTypes.number,
-        likes: PropTypes.number,
+        followers: PropTypes.number.isRequired,
+        views: PropTypes.number.isRequired,
+        likes: PropTypes.number.isRequired,
     }),
 }
